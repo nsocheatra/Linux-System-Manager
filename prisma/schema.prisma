@@ -13,23 +13,24 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
-model User {
-  id            String    @id
-  name          String
-  email         String
-  emailVerified Boolean<button
-          onClick={() => router.push("/sign-in")}
-          className="border border-white text-white font-medium px-6 py-2 rounded-md hover:bg-neutral-800">
-          Sign In
-        </button>
-  image         String?
-  createdAt     DateTime
-  updatedAt     DateTime
-  sessions      Session[]
-  accounts      Account[]
 
-  @@unique([email])
-  @@map("user")
+enum Role {
+  ADMIN
+  USER
+}
+model User {
+  id            String    @id
+  name          String
+    role  Role  @default(USER) // Assign a default role
+
+  email         String    @unique
+  emailVerified Boolean
+  createdAt     DateTime
+  updatedAt     DateTime
+  sessions      Session[]
+  accounts      Account[]
+
+  @@map("user")
 }
 
 model Session {

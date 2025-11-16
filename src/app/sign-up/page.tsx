@@ -67,6 +67,7 @@ export default function SignUpPage() {
                 required
                 className="w-full px-4 py-2.5 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
                 placeholder="Nong Socheatra"
+                minLength={5}
               />
           </div>
           
@@ -87,7 +88,7 @@ export default function SignUpPage() {
             Password
           </label>
           <input
-            id="password"
+            name="password"
             type="password"
             required
             className="mt-1 block w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none focus:ring-green-500 focus:border-green-500"
@@ -96,7 +97,7 @@ export default function SignUpPage() {
           />
         </div>
 
-         {/* <div>
+         <div>
           <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-400">
             Confirm Password
           </label>
@@ -108,7 +109,7 @@ export default function SignUpPage() {
             placeholder="repeat password"
             minLength={8}
           />
-        </div> */}
+        </div>
              <button
               type="submit"
               className="w-full bg-blue-600 hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed text-white font-semibold py-2.5 px-4 rounded-lg shadow-lg transition duration-200"
